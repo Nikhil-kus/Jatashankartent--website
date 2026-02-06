@@ -23,7 +23,12 @@ body {
    TYPOGRAPHY
    ============================================ */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
 }
@@ -219,44 +224,66 @@ section {
    ============================================ */
 
 .services {
-    background-color: #fff;
+    background-color: #f9f7f4;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    align-items: stretch;
 }
 
 .service-card {
-    background-color: #f9f7f4;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    text-align: center;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
     border-color: #d4a574;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 0.75rem 0.75rem 0 0;
+    z-index: 1;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .service-card h3 {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: #333;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    text-align: center;
 }
 
 .service-card p {
     color: #666;
     font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    flex-grow: 1;
+    text-align: center;
 }
 
 /* ============================================
@@ -396,8 +423,12 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .services-grid {
+    .services-gallery {
         grid-template-columns: 1fr;
+    }
+
+    .service-image {
+        height: 220px;
     }
 
     .gallery-grid {
@@ -464,8 +495,20 @@ section {
         font-size: 0.9rem;
     }
 
-    .service-card {
-        padding: 1.5rem;
+    .service-details {
+        padding: 1.2rem;
+    }
+
+    .service-image {
+        height: 200px;
+    }
+
+    .service-details h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-details p {
+        font-size: 0.9rem;
     }
 
     .contact-item {
